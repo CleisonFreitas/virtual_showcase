@@ -1,0 +1,39 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "FKI",
+            "sku": "ADS-32",
+            "price": 20.00,
+            "metric": "Weight: 2KG"
+        },
+        {
+            "id": 2,
+            "name": "GWSAS",
+            "sku": "ASF-32",
+            "price": 20.00,
+            "metric": "Weight: 2KG"
+        },
+        {
+            "id": 3,
+            "name": "Kiff",
+            "sku": "KFF-3F",
+            "price": 20.00,
+            "metric": "Size 20 MB"
+        },
+        {
+            "id": 4,
+            "name": "OZIA",
+            "sku": "OSZ-52",
+            "price": 20.00,
+            "metric": "Dimen. 24x45x15"
+        },
+        {
+            "id": 5,
+            "name": "TASG",
+            "sku": "TSG-52",
+            "price": 30.00,
+            "metric": "Dimen. 24x45x15"
+        }
+    ]
+}
