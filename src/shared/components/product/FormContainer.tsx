@@ -37,20 +37,6 @@ export const FormContainer = () => {
     setSelectedAttribute(value);
   };
 
-  /*const handleEvent = useCallback((name: string, value: string) => {
-
-    const attributeMapping: { [key: string]: { stateSetter: (value: string) => void, attributeKey: string } } = {
-      'size': { stateSetter: setSize, attributeKey: 'size' },
-      'weight': { stateSetter: setWeight, attributeKey: 'weight' },
-    };
-  
-    if (attributeMapping[name]) {
-      const { stateSetter, attributeKey } = attributeMapping[name];
-      stateSetter(value);
-      setAddAttribute({ [attributeKey]: value });
-    }
-  }, []);*/
-
   const mappingParams = (name: string, value: string | object) => {
     const dados: MappingParamsType = {
       'size': {
@@ -99,7 +85,11 @@ export const FormContainer = () => {
       name='size'
       value={formData.attribute?.size?.value}
       handleFormControl={handleInputChange} />,
-    'Book': <BookSchema />,
+    'Book': <BookSchema 
+      name='weight' 
+      handleFormControl={handleInputChange}
+      value={formData.attribute?.weight?.value}
+      />,
     'Furniture': <FurnitureSchema />
   }
 

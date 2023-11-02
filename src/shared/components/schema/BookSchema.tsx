@@ -3,14 +3,11 @@ import { SoftAlert } from ".."
 import { FormInput } from "../input/FormInput"
 import { BsInfo } from "react-icons/bs";
 import { FlexDisplay } from "../input/FlexDisplay";
+import { BookSchemaType } from "../../types/BookSchemaType";
 
-export const BookSchema = () => {
+export const BookSchema: React.FC<BookSchemaType> = ({value, handleFormControl,name}) => {
     const [visibleNotify, setVisibleNotify] = useState<boolean>(false);
-    const [weight, setWeight] = useState<string>('');
 
-    const handleWeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setWeight(e.target.value);
-    }
     const ShowNotify = useCallback(() => {
         setVisibleNotify((prev) => !prev);
     }, [])
@@ -20,10 +17,10 @@ export const BookSchema = () => {
                 <FormInput
                     label="weight"
                     placeholder="Weight"
-                    name="weight"
-                    value={weight}
+                    name={name}
+                    value={value}
                     nameInput="Weight(KG)"
-                    onChange={handleWeightChange}
+                    onChange={handleFormControl}
                     sx={{
                         lg: 'lg:w-44',
                         md: 'md:w-44',
