@@ -3,23 +3,18 @@ import { SoftAlert } from ".."
 import { FormInput } from "../input/FormInput"
 import { BsInfo } from "react-icons/bs";
 import { FlexDisplay } from "../input/FlexDisplay";
-
-type DimensionsType = {
-    height: string;
-    width: string;
-    length: string;
-}
+import { DimensionSchemaType } from "../../types/DimensionSchemaType";
 
 
 export const FurnitureSchema = () => {
 
-    const DimensionValues:DimensionsType = {
+    const DimensionValues:DimensionSchemaType = {
         height: '',
         width: '',
         length: ''
     }
     const [visibleNotify, setVisibleNotify] = useState<boolean>(false);
-    const[dimensions, setDimensions] = useState<DimensionsType>(DimensionValues);
+    const[dimensions, setDimensions] = useState<DimensionSchemaType>(DimensionValues);
 
     const handleDimensionsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;

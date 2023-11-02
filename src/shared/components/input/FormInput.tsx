@@ -6,7 +6,8 @@ type IFormInput = {
     type: string;
     name: string;
     value: string | number | undefined;
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void | (() => void) ;
+    onKeyDown?:(e: React.KeyboardEvent<HTMLInputElement>) => void;
     placeholder?: string;
     sx: {
         lg: string;
@@ -24,6 +25,7 @@ export const FormInput: React.FC<IFormInput> = (
         name,
         sx,
         onChange,
+        onKeyDown,
         disabled,
         label,
         nameInput
@@ -42,6 +44,7 @@ export const FormInput: React.FC<IFormInput> = (
                 value={value}
                 name={name}
                 onChange={onChange}
+                onKeyDown={onKeyDown}
                 placeholder={placeholder}
                 readOnly={disabled}
                 className={`${FormInputStyle} ${sx["lg"]} ${sx["md"]} ${sx["sm"]}`}
